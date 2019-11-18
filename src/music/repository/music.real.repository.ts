@@ -1,7 +1,7 @@
 import {MusicRepository} from "./music.repository";
 import {Artist, Song} from "../data/music.models";
 
-export class MusicMockRepository implements MusicRepository {
+export class MusicRealRepository implements MusicRepository {
     findSongsByArtists(artist: string): Array<Song> {
         return [
             new Song('Erase/Rewind', artist, 3),

@@ -1,7 +1,7 @@
-import {Album, Artist} from "./data/music.models";
+import {Song, Artist} from "../data/music.models";
 
 export interface MusicRepository {
     findAllArtist(): Array<Artist>;
-    findAlbumsByArtists(artist: string): Array<Album>;
-    findAllAlbums(): Array<Album>;
+    findSongsByArtists(artist: string): Array<Song>;
+    findAllSongs(from: Date, to: Date): Array<Song>;
 }

@@ -2,7 +2,7 @@ import {MusicImplService} from "./music.impl.service";
 import {MusicMockRepository} from "./repository/music.mock.repository";
 
 describe('Music Service Impl', () => {
-    let service : MusicImplService;
+    let service: MusicImplService;
     beforeAll(() => {
         service = new MusicImplService(new MusicMockRepository());
     });
@@ -14,28 +14,31 @@ describe('Music Service Impl', () => {
 
     it('should find the Top 5', () => {
         const res = service.getTop5();
-        expect(res).toEqual([
-            {
-                "title": "Son of a preacherman",
-                "artist": {
-                    "name": "Dusty Springfield"
+        expect(res).toEqual({
+            date: '2019-11-03',
+            songs: [
+                {
+                    "title": "Son of a preacherman",
+                    "artist": {
+                        "name": "Dusty Springfield"
+                    },
+                    "sales": 32
                 },
-                "sales": 32
-            },
-            {
-                "title": "Perfect Day",
-                "artist": {
-                    "name": "Lou Reed"
+                {
+                    "title": "Perfect Day",
+                    "artist": {
+                        "name": "Lou Reed"
+                    },
+                    "sales": 24
                 },
-                "sales": 24
-            },
-            {
-                "title": "This is a Call",
-                "artist": {
-                    "name": "Foo Fighters"
-                },
-                "sales": 12
-            }
-        ]);
+                {
+                    "title": "This is a Call",
+                    "artist": {
+                        "name": "Foo Fighters"
+                    },
+                    "sales": 12
+                }
+            ]
+        });
     });
 });
