@@ -62,6 +62,7 @@ describe('Music Service Impl', () => {
     it('should test moment', () => {
         const m1 = mt();
         const m2 = mt(m1).subtract(3, 'months');
+        // warning : m1.subtract(3, 'months') modifies m1
 
         expect(m1.format('YYYY-MM-DD')).toEqual('2019-11-03');
         expect(m2.format('YYYY-MM-DD')).toEqual('2019-08-03');
